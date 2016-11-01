@@ -10,7 +10,6 @@ const success = (data) => {
 const signInSuccess = data => {
   store.user = data.user;
 console.log(data);
-debugger
 
 };
 
