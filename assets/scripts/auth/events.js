@@ -11,6 +11,7 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.success)
     .catch(ui.failure);
+    $('#sign-up-modal').modal('hide');
 };
 
 const onSignIn = function (event) {
@@ -38,7 +39,7 @@ const onSignOut = function (event){
 
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
-  $('#sign-in-modal').on('submit', onSignIn);
+  $('.sign-in-form').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
 };

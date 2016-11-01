@@ -9,7 +9,9 @@ const success = (data) => {
 
 const signInSuccess = data => {
   store.user = data.user;
-  success(data);
+console.log(data);
+debugger
+
 };
 
 
