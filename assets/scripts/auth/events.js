@@ -20,6 +20,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.failure);
+    $('#sign-in-modal').modal('hide');
 };
 
 const onChangePassword = function (event) {
@@ -40,8 +41,8 @@ const onSignOut = function (event){
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
-  $('#change-password').on('submit', onChangePassword);
-  $('#sign-out').on('submit', onSignOut);
+  $('.change-password-form').on('submit', onChangePassword);
+  $('.sign-out').on('submit', onSignOut);
 };
 
 module.exports = {
