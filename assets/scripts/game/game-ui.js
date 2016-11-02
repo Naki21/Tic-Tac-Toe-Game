@@ -3,16 +3,13 @@ const store = require('../store.js');
 
 
 const success = (data) => {
-  $("#messages").text("success");
+  store.game = data.game;
+ console.log(store);
+ console.log(data);
+};
+const moveSuccess = (data) => {
   console.log(data);
 };
-
-const signInSuccess = data => {
-  store.user = data.user;
-console.log(data);
-
-};
-
 
 
 const failure = (error) => {
@@ -23,5 +20,5 @@ const failure = (error) => {
 module.exports = {
   failure,
   success,
-  signInSuccess,
+  moveSuccess
 };
