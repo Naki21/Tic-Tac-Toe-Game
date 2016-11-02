@@ -26,12 +26,12 @@ $.ajax({
   },
 });
 
-const signOut = () =>
+const signOut = (player) =>
 $.ajax({
-  url: config.host + "/sign-out/" + store.user.id,
+  url: config.host + "/sign-out/" + player.id,
   method: 'DELETE',
   headers: {
-    Authorization: 'Token token=' + store.user.token,
+    Authorization: 'Token token=' + player.token,
   }
 });
 

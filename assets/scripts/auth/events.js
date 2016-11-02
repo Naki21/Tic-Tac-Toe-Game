@@ -1,7 +1,7 @@
 'use strict';
 
 const getFormFields = require(`../../../lib/get-form-fields`);
-
+const store = require('../store');
 const api = require('./api');
 const ui = require('./ui');
 
@@ -30,10 +30,11 @@ const onChangePassword = function (event) {
     .then(ui.success)
     .catch(ui.failure);
 };
-
+//There is a better way to log out individual player
 const onSignOut = function (event){
   event.preventDefault();
-  api.signOut()
+  api.signOut(store.player_x);
+  api.signOut(store.player_o)
   .then(ui.success)
   .catch(ui.failure);
 };
