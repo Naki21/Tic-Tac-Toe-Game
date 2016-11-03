@@ -7,9 +7,7 @@ const store = {
 
    game: {},
 
-   turn: "x",
-
-   turnCount: 0,
+   turn: "X",
 };
 
 module.exports = store;
