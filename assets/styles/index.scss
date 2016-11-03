@@ -13,6 +13,7 @@ body {
 .box {
   border: 1px solid $white;
   height: 200px;
+  pointer-events: none;
   width: 200px;
 
   &:hover {
