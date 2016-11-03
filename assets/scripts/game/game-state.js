@@ -6,10 +6,12 @@ const store = require('../store');
 
 
 const changeTurn = function() {
-  if (store.turn === "x") {
-    store.turn = "o";
-  } else {
-    store.turn = "x";
+  while (store.game.over !== true) {
+    if (store.turn === "x") {
+      store.turn = "o";
+    } else {
+      store.turn = "x";
+    }
   }
 };
 
@@ -43,6 +45,7 @@ const checkWin = function(turn, board) {
 const updateCell = function(index, turn) {
   store.game.cells[index] = turn;
   checkWin(turn, store.game.cells);
+  changeTurn();
 };
 
 module.exports = {
