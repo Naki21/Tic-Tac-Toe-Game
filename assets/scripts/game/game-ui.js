@@ -2,14 +2,12 @@
 const store = require('../store.js');
 
 
-const success = (data) => {
+const successNew = (data) => {
   store.game = data.game;
- console.log(store);
- console.log(data);
+  $('#banner').text("X's Move");
 };
 const moveSuccess = (data) => {
   store.game = data.game;
-  console.log(store);
 };
 
 
@@ -20,6 +18,6 @@ const failure = (error) => {
 
 module.exports = {
   failure,
-  success,
+  successNew,
   moveSuccess
 };

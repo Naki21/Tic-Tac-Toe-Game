@@ -6,14 +6,15 @@ const store = require('../store');
 
 
 const changeTurn = function() {
-  while (store.game.over !== true) {
-    if (store.turn === "x") {
+    if (store.turn === "x" && store.game.over === false) {
       store.turn = "o";
-    } else {
+      $('#banner').text("Os Move");
+    } else if (store.game.over === false){
       store.turn = "x";
-    }
+      $('#banner').text("Xs Move");
   }
 };
+
 
 const winRow = function(turn, board) {
 

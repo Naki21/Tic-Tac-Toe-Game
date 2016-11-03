@@ -7,7 +7,7 @@ const state = require('./game-state');
 const onNewGame = function(event) {
   event.preventDefault();
   api.createGame()
-    .then(ui.success)
+    .then(ui.successNew)
     .catch(ui.failure);
 };
 
@@ -31,7 +31,6 @@ const updateBox = function () {
   $(this).text(store.turn);
   state.updateCell($(this).data("index"), store.turn);
   makeMove($(this).data("index"));
-
 };
 
 
