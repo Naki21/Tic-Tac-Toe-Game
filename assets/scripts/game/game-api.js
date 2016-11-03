@@ -12,8 +12,6 @@ $.ajax({
   },
 });
 
-
-
 const updateBoard = (data) =>
 $.ajax({
   url: config.host + "/games/" + store.game.id,
@@ -24,8 +22,19 @@ $.ajax({
   },
 });
 
+const pullStat = function(dat) {
+return  $.ajax({
+    url: config.host + "/games/" + dat.id,
+    method: 'GET',
+    headers: {
+    Authorization: 'Token token=' + store.player_x.token,
+    },
+  });
+};
+
 
 module.exports = {
   createGame,
-  updateBoard
+  updateBoard,
+  pullStat,
 };

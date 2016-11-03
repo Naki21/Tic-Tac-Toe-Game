@@ -1,4 +1,5 @@
 'use strict';
+const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./game-api');
 const ui = require('./game-ui');
 const store = require('../store');
@@ -10,7 +11,6 @@ const onNewGame = function(event) {
     .then(ui.successNew)
     .catch(ui.failure);
 };
-
 
 const makeMove = function(index) {
   let data = {
@@ -35,11 +35,22 @@ const updateBox = function () {
   state.changeTurn();
 };
 
+const getStat = function (event) {
+  let data = getFormFields(this);
+  event.preventDefault();
+
+  api.pullStat(data)
+  .then(ui.successStat)
+  .catch(ui.failure);
+};
+
 
 
 const addGameHandlers = () => {
   $('.new-game-button').on('submit', onNewGame);
   $('.box').on('click', updateBox);
+  $('#get-stats').on('submit', getStat);
+
 };
 
 module.exports = {

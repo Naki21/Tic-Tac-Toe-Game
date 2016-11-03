@@ -15,6 +15,10 @@ body {
   height: 200px;
   pointer-events: none;
   width: 200px;
+  font-size: 70px;
+  text-align: center;
+  font-size-adjust: auto;
+  line-height: 200px;
 
   &:hover {
     background-color: $white;

@@ -11,14 +11,19 @@ const moveSuccess = (data) => {
   store.game = data.game;
 };
 
-
 const failure = (error) => {
   $("#messages").text("failure");
   console.error(error);
 };
 
+const successStat = function(data){
+  $('.stats-modal-body').text(JSON.stringify(data.game));
+  console.log(data);
+};
+
 module.exports = {
   failure,
   successNew,
-  moveSuccess
+  moveSuccess,
+  successStat,
 };
