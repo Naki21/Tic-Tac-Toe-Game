@@ -9,7 +9,8 @@ const success = (data) => {
 };
 const moveSuccess = (data) => {
   store.game = data.game;
-  console.log(store.game);
+  console.log(data);
+  console.log(store);
 };
 
 

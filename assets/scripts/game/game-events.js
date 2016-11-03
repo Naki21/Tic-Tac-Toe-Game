@@ -11,20 +11,12 @@ const onNewGame = function(event) {
     .catch(ui.failure);
 };
 
-const changeTurn = function() {
-  if (store.turn === "x") {
-    store.turn = "o";
-  } else {
-    store.turn = "x";
-  }
-};
 
-
-const makeMove = function() {
+const makeMove = function(index) {
   let data = {
     "game": {
       "cell": {
-        "index": $(this).data("index"),
+        "index": index,
         "value": store.turn,
       },
       "over": false
@@ -32,28 +24,20 @@ const makeMove = function() {
   };
   api.updateBoard(data)
     .then(ui.moveSuccess)
-    .catch(ui.failure)
-    // changeTurn();
-  ;
+    .catch(ui.failure);
 
 };
-const updateCell = function() {
-  store.game.cells = {
-    index: $(this).data("index"),
-    value: store.turn,
-  };
+const updateBox = function () {
   $(this).text(store.turn);
-  state.checkWin(store.turn, store.game.cells);
-  makeMove();
-  debugger
+  state.updateCell($(this).data("index"), store.turn);
+  makeMove($(this).data("index"));
 };
-
 
 
 
 const addGameHandlers = () => {
   $('.new-game-button').on('submit', onNewGame);
-  $('.box').on('click', updateCell);
+  $('.box').on('click', updateBox);
 };
 
 module.exports = {

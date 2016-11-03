@@ -1,6 +1,23 @@
 'use strict';
 const store = require('../store');
 
+
+
+
+
+const changeTurn = function() {
+  if (store.turn === "x") {
+    store.turn = "o";
+  } else {
+    store.turn = "x";
+  }
+};
+
+// const checkWinner = function () {
+//   if(store.game.over === true) {
+//      = store.turn;
+//   }
+// }
 const winRow = function(turn, board) {
 
   if(board[0] === turn && board[1] === turn && board[2] === turn) {
@@ -32,20 +49,21 @@ const winX = function(turn, board) {
   }
 };
 
-// const checkWinner = function () {
-//   if(store.game.over === true) {
-//      = store.turn;
-//   }
-// }
-
-
 
 const checkWin = function(turn, board) {
-winRow(turn, board);
-winCol(turn, board);
-winX(turn, board);
+  winRow(turn, board);
+  winCol(turn, board);
+  winX(turn, board);
+
+};
+
+const updateCell = function(index, turn) {
+  store.game.cells[index] = turn;
+  checkWin(turn, store.game.cells);
 };
 
 module.exports = {
   checkWin,
+  updateCell,
+  changeTurn,
 };
