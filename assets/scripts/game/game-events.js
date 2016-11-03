@@ -19,18 +19,19 @@ const makeMove = function(index) {
         "index": index,
         "value": store.turn,
       },
-      "over": false
+      "over": store.game.over,
     },
   };
   api.updateBoard(data)
     .then(ui.moveSuccess)
     .catch(ui.failure);
-
 };
+
 const updateBox = function () {
   $(this).text(store.turn);
   state.updateCell($(this).data("index"), store.turn);
   makeMove($(this).data("index"));
+
 };
 
 
