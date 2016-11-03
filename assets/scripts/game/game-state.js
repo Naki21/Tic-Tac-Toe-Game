@@ -1,10 +1,6 @@
 'use strict';
 const store = require('../store');
 
-
-
-
-
 const changeTurn = function() {
   if (store.turn === "x" && store.game.over === false) {
     store.turn = "o";
@@ -12,9 +8,6 @@ const changeTurn = function() {
   } else if (store.game.over === false) {
     store.turn = "x";
     $('#banner').text("Xs Move");
-  } else {
-    $('.box').css('pointer-events', 'none');
-    $('#banner').text(store.turn + "Wins!");
   }
 };
 
@@ -40,17 +33,25 @@ const winX = function(turn, board) {
   }
 };
 
+const checkCats = function(board) {
+  if (board.every((cell) => cell !== '')) {
+    store.game.over = true;
+    $('.box').css('pointer-events', 'none');
+    $('#banner').text('CATS!');
+
+  }
+
+};
 
 const checkWin = function(turn, board) {
   winRow(turn, board);
   winCol(turn, board);
   winX(turn, board);
-  if(store.game.over === true) {
-  $('.box').css('pointer-events', 'none');
-
+  checkCats(board);
+  if (store.game.over === true) {
+    $('.box').css('pointer-events', 'none');
   }
 };
-
 const updateCell = function(index, turn) {
   store.game.cells[index] = turn;
   checkWin(turn, store.game.cells);
