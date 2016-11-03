@@ -8,7 +8,8 @@ const success = (data) => {
  console.log(data);
 };
 const moveSuccess = (data) => {
-  console.log(data);
+  store.game = data.game;
+  console.log(store.game);
 };
 
 

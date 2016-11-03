@@ -2,6 +2,7 @@
 const api = require('./game-api');
 const ui = require('./game-ui');
 const store = require('../store');
+const states = require('./game-states');
 
 const onNewGame = function (event) {
     event.preventDefault();
@@ -16,6 +17,9 @@ const changeTurn = function () {
     store.turn = "x";
   }
 };
+
+
+
 const makeMove = function () {
     let data = {
   "game": {
@@ -29,9 +33,13 @@ const makeMove = function () {
 $(this).text(store.turn);
     api.updateBoard(data)
     .then(ui.moveSuccess)
-    .catch(ui.failufailure);
+    .catch(ui.failure);
+    states.winRow(store.turn);
     changeTurn();
 };
+
+
+
 
   const addGameHandlers = () => {
     $('.new-game-button').on('submit', onNewGame);
