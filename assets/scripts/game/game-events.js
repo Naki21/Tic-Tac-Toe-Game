@@ -29,8 +29,10 @@ const makeMove = function(index) {
 
 const updateBox = function () {
   $(this).text(store.turn);
+  $(this).css('pointer-events', 'none');
   state.updateCell($(this).data("index"), store.turn);
   makeMove($(this).data("index"));
+  state.changeTurn();
 };
 
 
