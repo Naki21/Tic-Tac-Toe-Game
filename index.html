@@ -197,6 +197,40 @@
     </div>
   </div>
   <!--end change pw modal-->
+  <!-- Button trigger Stats modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+  <!-- Stats Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="stats-modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+              <div class="input-group">
+
+                <input type="number" class="form-control" id="exampleInputAmount" placeholder="Game I.D.">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Stats</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of Stats Modal-->
 </body>
 
 </html>
