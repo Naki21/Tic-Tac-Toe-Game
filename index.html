@@ -3,69 +3,63 @@
 
 <head>
   <title>Tic-Tac-Toe</title>
-   <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-cnetered">
 
     <!-- nav start -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li>
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-up-modal">Sign up</button>
-          </li>
-          <li>
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
-          </li>
-          <li>
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
-          </li>
-          <li>
-            <form class="sign-out">
-              <div class="form-group">
-                <button type="submit" name="submit" class="btn btn-primary btn-lg">Sign Out</button>
-              </div>
-            </form>
-          </li>
-        </ul>
-      </div>
+    <nav class="navbar navbar-inverse">
+
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-up-modal">Sign up</button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Get Game Stats
+          </button>
       <!-- /.container-fluid -->
     </nav>
     <!-- end nav -->
 
-    <h1>Example</h1>
+    <h1>Tic-Tac-Toe</h1>
     <p id="banner">Would you like to play a Game?</p>
 
+    <div class="container.fluid">
 
-    <div class="row">
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="0">0</div>
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="1">1</div>
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="2">2</div>
+      <div class="row">
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="0"></div>
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="1"></div>
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="3"></div>
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="4"></div>
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="5"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="6"></div>
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="7"></div>
+        <div class="col-xs-4 col-md-4 box" data-value="" data-index="8"></div>
+      </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="3">3</div>
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="4">4</div>
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="5">5</div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="6">6</div>
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="7">7</div>
-      <div class="col-xs-4 col-md-4 box" data-value="" data-index="8">8</div>
-    </div>
   </div>
-
-  <form class="new-game-button">
-    <div class="form-group">
-      <button type="submit" name="''" class="btn btn-primary btn-lg">New Game</button>
-    </div>
-  </form>
-
-
+  <footer>
+    <form class="new-game-button">
+      <div class="form-group">
+        <button type="submit" name="''" class="btn btn-primary btn-lg">New Game</button>
+      </div>
+    </form>
+    <form class="sign-out">
+      <div class="form-group">
+        <button type="submit" name="submit" class="btn btn-primary btn-lg">Sign Out</button>
+      </div>
+    </form>
+  </footer>
   <!--sign up modle-->
   <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -149,9 +143,6 @@
   </div>
   <!--end change pw modal-->
   <!-- Button trigger Stats modal -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
 
   <!-- Stats Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -174,7 +165,7 @@
               </div>
             </div>
             <button type="submit" class="btn btn-primary">Get Stats</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </form>
 
         </div>

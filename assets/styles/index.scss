@@ -4,25 +4,30 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: #4e4e4e;
 $font-color: #dfdfdf;
 $white: #fff;
-
+$green: #0ccd3d;
 
 body {
   background-color: $background-color;
   color: $font-color;
-
-}
+  text-align: center;
+};
 
 .box {
-  border: 1px solid $white;
+  border: 2px solid $green;
+  border-radius: 20px;
   height: 200px;
   pointer-events: none;
   width: 200px;
   font-size: 70px;
-  text-align: center;
-  font-size-adjust: auto;
   line-height: 200px;
+  float: none;
+  display: inline-block;
 
   &:hover {
     background-color: $white;
   }
+}
+
+footer {
+  margin-top: 30px;
 }
