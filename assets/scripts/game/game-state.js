@@ -2,8 +2,8 @@
 const store = require('../store');
 
 const changeTurn = function() {
-  if (store.turn === "x" && store.game.over === false) {
-    store.turn = "X";
+  if (store.turn === "X" && store.game.over === false) {
+    store.turn = "O";
     $('#banner').text("O's Move");
   } else if (store.game.over === false) {
     store.turn = "X";
