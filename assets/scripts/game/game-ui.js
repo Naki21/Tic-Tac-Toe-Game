@@ -12,13 +12,11 @@ const moveSuccess = (data) => {
 };
 
 const failure = (error) => {
-  $("#messages").text("failure");
   console.error(error);
 };
 
 const successStat = function(data){
   $('.stats-modal-body').text("You have played " + data.games.length + " games!");
-  console.log(data);
 };
 
 module.exports = {

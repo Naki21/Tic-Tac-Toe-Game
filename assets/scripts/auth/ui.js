@@ -2,21 +2,18 @@
 const store = require('../store.js');
 
 
-const success = (data) => {
+const success = () => {
   $("#messages").text("success");
-  console.log(data);
 };
 
 const signInSuccess = (data) => {
 store.user = data.user;
-console.log(data);
 };
 
 
 
-const failure = (error) => {
+const failure = () => {
   $("#messages").text("failure");
-  console.error(error);
 };
 
 module.exports = {
