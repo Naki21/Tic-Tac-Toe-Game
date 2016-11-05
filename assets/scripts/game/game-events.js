@@ -1,5 +1,4 @@
 'use strict';
-const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./game-api');
 const ui = require('./game-ui');
 const store = require('../store');
@@ -36,10 +35,9 @@ const updateBox = function () {
 };
 
 const getStat = function (event) {
-  let data = getFormFields(this);
   event.preventDefault();
 
-  api.pullStat(data)
+  api.pullStat()
   .then(ui.successStat)
   .catch(ui.failure);
 };

@@ -33,8 +33,7 @@ const onChangePassword = function (event) {
 //There is a better way to log out individual player
 const onSignOut = function (event){
   event.preventDefault();
-  api.signOut(store.player_x);
-  api.signOut(store.player_o)
+  api.signOut(store.user)
   .then(ui.success)
   .catch(ui.failure);
 };

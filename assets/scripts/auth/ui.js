@@ -2,28 +2,18 @@
 const store = require('../store.js');
 
 
-const success = (data) => {
+const success = () => {
   $("#messages").text("success");
-  console.log(data);
 };
 
 const signInSuccess = (data) => {
-  if (store.player_x === null){
-    store.player_x = data.user;
-  } else if (store.player_o === null) {
-    store.player_o = data.user;
-  } else {
-    console.log("2 players already logged in!");
-  }
-console.log(data);
-
+store.user = data.user;
 };
 
 
 
-const failure = (error) => {
+const failure = () => {
   $("#messages").text("failure");
-  console.error(error);
 };
 
 module.exports = {
