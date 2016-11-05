@@ -22,9 +22,9 @@ $.ajax({
   },
 });
 
-const pullStat = function(dat) {
+const pullStat = function() {
 return  $.ajax({
-    url: config.host + "/games/" + dat.id,
+    url: config.host + "/games/",
     method: 'GET',
     headers: {
     Authorization: 'Token token=' + store.user.token,

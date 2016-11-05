@@ -40,7 +40,7 @@ const winX = function(turn, board) {
 };
 
 const checkCats = function(board) {
-  if (board.every((cell) => cell !== '')) {
+  if (board.every((cell) => cell !== '') && store.game.over === false) {
     store.game.over = true;
     $('.box').css('pointer-events', 'none');
     $('#banner').text('CATS!');

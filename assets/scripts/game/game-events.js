@@ -36,10 +36,9 @@ const updateBox = function () {
 };
 
 const getStat = function (event) {
-  let data = getFormFields(this);
   event.preventDefault();
 
-  api.pullStat(data)
+  api.pullStat()
   .then(ui.successStat)
   .catch(ui.failure);
 };
