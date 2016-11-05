@@ -8,7 +8,7 @@ $.ajax({
   method: 'POST',
   game: {},
   headers: {
-  Authorization: 'Token token=' + store.player_x.token,
+  Authorization: 'Token token=' + store.user.token,
   },
 });
 
@@ -18,7 +18,7 @@ $.ajax({
   method: 'PATCH',
   data,
   headers: {
-  Authorization: 'Token token=' + store.player_x.token,
+  Authorization: 'Token token=' + store.user.token,
   },
 });
 
@@ -27,7 +27,7 @@ return  $.ajax({
     url: config.host + "/games/" + dat.id,
     method: 'GET',
     headers: {
-    Authorization: 'Token token=' + store.player_x.token,
+    Authorization: 'Token token=' + store.user.token,
     },
   });
 };

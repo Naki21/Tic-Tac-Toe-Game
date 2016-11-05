@@ -8,15 +8,8 @@ const success = (data) => {
 };
 
 const signInSuccess = (data) => {
-  if (store.player_x === null){
-    store.player_x = data.user;
-  } else if (store.player_o === null) {
-    store.player_o = data.user;
-  } else {
-    console.log("2 players already logged in!");
-  }
+store.user = data.user;
 console.log(data);
-
 };
 
 
